@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <title>Enter your registration details</title>
+        <meta>
+            
+        </script>
+        <style>
+            body,html{
+                padding:0;
+                margin:0;
+            }
+            .bat{
+                position:relative;
+                top:100px;
+            
+            }
+            .bat p
+            {
+            display:inline;
+                padding:30px;
+                position:relative;
+                left:62px;
+                color:#5ff442;
+            }
+            .pos{
+                position: relative;
+                left:px;
+                top:90px;
+                
+               
+            }
+            .sp{
+                position: relative;
+                left:30px;
+                 margin:10px;
+            }
+            .sp2{
+                position: relative;
+                left:75px;
+                 margin:10px;
+            }
+              .sp3{
+                position: relative;
+                left:50px;
+                margin:10px;
+            }
+            .hok{height:100%;
+                background-image:url("https://images.unsplash.com/photo-1470345961863-06d4b12d93b3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1789&q=80");
+            background-size:cover;}
+            
+        </style>
+    </head>
+    
+    <body>
+        <div class="hok">
+        <form class="bat" method="post" action="data.php">
+            
+            <p>Enter first name:</p><input class="sp" type="text" name="fname" placeholder="first name"> <br>
+           <p>Enter last name: </p><input class="sp" type="text" name="sname" placeholder="second name"><br>
+           <p>Email Address:   </p><input id ="mail" class="sp" type="text" name="email" placeholder="abcd@gmail.com" size="45"><br>
+           <p>Date of Birth:  </p><input class="sp" type="text" name="dob" placeholder="DD/MM/YYYY format"> <br>
+        <p >Password:</p><input id="pass" class="sp2" type="text" name="pass" placeholder="7-16 characters long and should only contain numeric values, alphabets and underscore " size="65" class="sp"><br>
+         <p >Confirm Password:</p><input id="pass2" class="sp3" type="text" name="pass"  size="45" class="sp">
+            <button type="submit" value="submit" id="clo" class="pos">SUBMIT</button>
+        </div>
+            
+           <script type="text/javascript">
+            alert("Please enter the relevant details in the specified format");
+            document.getElementById("clo").onclick=function(){
+            var x=document.getElementById("pass").value;
+            var y=document.getElementById("pass2").value;
+            var z=document.getElementById("mail").value;
+            var n = x.localeCompare(y);
+             if(n!=0)
+             {
+                alert("Passwords should match");
+             }
+             
+
+    var pflag = true; //Password flag
+    var eflag = true; //Email flag
+    var psw_regex = /^[A-Za-z]\w{7,14}$/;
+    var email_regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(!z.match(email_regex)){
+        alert("Email entered is invalid, please check again");
+        eflag = false;
+        return false;
+    }
+    if(!x.match(psw_regex))
+    {
+        alert("Password is invalid. Please enter a password that is 7-16 characters long and should only contain numeric values, alphabets and underscore");
+        pflag = false;
+        return false;
+    }
+    return true;
+}
+
+
+             
+             
+             
+            
+            
+           </script> 
+            
+        </form>
+        
+    </body>
+</html>
